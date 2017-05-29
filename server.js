@@ -5,6 +5,9 @@ var bodyParser = require('body-parser');
 var index = require('./routes/index');
 var todos = require('./routes/todos');
 
+// lets the port be set by Heroku
+var port = process.env.PORT || 8080;
+
 var app = express();
 
 //View Engine
@@ -20,6 +23,8 @@ app.use(bodyParser.urlencoded({extended: false}));  //false: string or array, tr
 app.use('/', index);
 app.use('/api/v1', todos);
 
-app.listen(3000, function(){
-  console.log('Server started on port 3000');
+//app.listen(3000, function(){
+  //new app.listen for Heroku
+  app.listen(port, function(){
+  console.log('Server is running on: ' + port);
 });
