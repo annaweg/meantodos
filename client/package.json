@@ -1,8 +1,10 @@
 {
   "name": "meantodos",
   "version": "1.0.0",
+  "main": "server.js",
   "scripts": {
-    "start": "npm run lite",
+    "start": "node server.js",
+    "postinstall": "bower install && grunt build",
     "lite": "lite-server"
   },
   "license": "MIT",
@@ -22,6 +24,13 @@
     "reflect-metadata": "^0.1.8",
     "rxjs": "5.0.0-rc.4",
     "zone.js": "^0.7.2"
+  },
+  "engines": {
+    "node": "7.2.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/annaweg/meantodos.git"
   },
   "devDependencies": {
     "concurrently": "^3.0.0",
